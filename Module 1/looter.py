@@ -33,9 +33,18 @@ def os_check():
         print "Platform not supported"
         exit(1)
 
+# Determines directory path of script
+def nest_egg():
+    return os.path.dirname(os.path.abspath(__file__));
+
 # Run all the things
-def robbery(os):
-    print os
+def robbery(os,path):
+    print os, path
+    return;
+
+# Compress files for exfil
+def tar():
+    
     return;
 
 ##############################
@@ -44,6 +53,7 @@ def robbery(os):
 
 argparser = argparse.ArgumentParser(description='Looter script, collects juicy data for malicious use.')
 argparser.add_argument('-a','--all', action='store_true', help='perform all collections')
+argparser.add_argument('-d','--dir', action='store', dest='path', help='specify nest egg path')
 args = argparser.parse_args()
 
 ####################
@@ -53,9 +63,14 @@ args = argparser.parse_args()
 # Calls platform information function
 plat = os_check()
 
+# Checks if -d is specified for a specific drop path
+# If -d not specified, automatically drop in script directory
+if not args.path:
+    args.path = nest_egg()
+
 # Argument tree for appropriate functionality
 if args.all:
-    robbery(plat)
+    robbery(plat,args.path)
         
 # End Program
 exit(0)
