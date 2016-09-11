@@ -23,3 +23,7 @@ http://stackoverflow.com/questions/110362/how-can-i-find-the-current-os-in-pytho
 
 http://stackoverflow.com/questions/2032403/how-to-create-full-compressed-tar-file-using-python
 
+http://stackoverflow.com/questions/4417546/constantly-print-subprocess-output-while-process-is-running
+
+https://docs.python.org/2/library/os.path.html#os.path.basename
+
