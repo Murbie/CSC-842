@@ -57,6 +57,7 @@ python ./looter.py -a -t 10.0.0.1 -p 1234 -d ~/Desktop/
 * Not sure how "discreet" the script is yet, plenty of room for improvement
 
 ##Future Work
+* Continue to expand list of useful / interesting files to capture
 * Search ssh known_hosts file and attempt to log into entries
 * Dump any databases into a file
 * Run a quick internal network scan and output into a file
