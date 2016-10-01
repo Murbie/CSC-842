@@ -1,0 +1,47 @@
+#Module 2 - xacml.py
+##Idea
+Create a cryptographic service that will interact with an XACML (Extensible Access Control Markup Language) backend to authenticate users to use the encryption service.
+
+##Overview
+A symmetric RC4 cryptographic system that interacts with an XACML backend was created from scratch in Python.  This system has the ability to encrypt or decrypt plaintext and ciphertext data from user input or any specified files.
+
+The script interacts with the WS02 Identity Server (IS) 5.0.0 that runs a suite of authentication tools including WS02 Balana, which is an Open Source XACML Engine derived from Sun's XACML Implementation that supports up to XACML 3.0.
+
+The IS acts as a Policy Administration Point (PAP), Policy Decision Point (PDP), Policy Information Point (PIP), and Policy Encorcement Point (PEP) for when the script queries the IS to make an authentication decision.
+
+The IS is implemented on a separate remote Windows 7 machine that is administrated through a web interface.  The cryptographic service queries the IS for an authentication decision and enforcement.
+
+##Script Usage & Functionality Walkthrough
+Execute the XACML python script with a flag specifying whether you would like to encrypt or decrypt a file.
+
+./xacml.py –e (flag to encrypt)
+./xacml.py –d (flag to decrypt)
+
+The script will prompt the user to enter a username and password.  A database of users is maintained in the WSO2 IS where three users are assigned to three particular roles with varying levels of permitted actions defined by the XACML policy put in place. These users are created and assigned roles on the WSO2 User Configuration and Role List panels as shown below.
+
+ _________________________________________
+| Username | Role     | Permitted Actions |
+|----------|----------|-------------------|
+| Admin    | Admin    | Encrypt / Decrypt |
+| Chaim    | Attacker | Encrypt           |
+| Murbie   | User     | Decrypt           |
+ -----------------------------------------
+
+Upon entering a username and password, the script will query the WSO2 IS with a XACML request. The WSO2 IS then serves as the Policy Decision Point (PDP) to determine if the given user is permitted to perform the action that it has chosen (either encrypt or decrypt) based on the XACML policies that are currently enabled on the WSO2 IS.  The decision that the WSO2 IS makes is relayed back to the script whether the action shall be permitted or denied.  
+
+If you have made it to this point without being denied access, congratulations! You have been authorized by the IS to perform your desired task of either encrypting or decrypting data.
+
+##Resources
+RC4 in Python Explained:
+http://blog.cdleary.com/2009/09/learning-python-by-example-rc4/
+
+WSO2 IS Download:
+http://wso2.com/products/identity-server/
+
+https://github.com/wso2/balana
+
+XACML Policy Creation Guide with WSO2 IS:
+http://xacmlinfo.org/2013/09/13/getting-start-with-wso2-identity-server-4-5-0/
+
+
+
