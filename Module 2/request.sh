@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -s -k -u $1:$2 -o permit.xml --header "soapaction: http://schemas.xmlsoap.org/ws/2005/02/trust/RST/SCT" --header "Content-Type: text/xml; charset=UTF-8" --data-binary @$3 https://172.16.11.138:9443/services/EntitlementService
