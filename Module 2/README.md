@@ -39,10 +39,6 @@ If you have made it to this point without being denied access, congratulations! 
 
 For those who prefer visuals like me to wrap your head around the overall functionality... I created a diagram!
 
-<div align="center">
-<img width="45%" src="https://github.com/Murbie/CSC-842/blob/master/Module%202/diagram.jpg" title="XACML Diagram"</img>
-</div>
-
 ![Alt text](https://github.com/Murbie/CSC-842/blob/master/Module%202/diagram.jpg "XACML Diagram")
 
 
