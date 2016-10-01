@@ -12,7 +12,7 @@ The IS acts as a Policy Administration Point (PAP), Policy Decision Point (PDP),
 The IS is implemented on a separate remote Windows 7 machine that is administrated through a web interface.  The cryptographic service queries the IS for an authentication decision and enforcement.
 
 ##Files Overview:
-* xacml.py is the main script that runs both the encryption service and ties with the xacml engine
+* xacml.py is the main script that runs both the encryption service and ties with the XACML engine (WS02 IS)
 * request.sh is the script that is invoked to send a curl command to the WSO2 IS with the XACML request
 * permit.xml is the file that contains the decision from the WSO2 IS after an XACML request is sent
 * policy.xml is the XACML policy that was implemented for this project to maintain those three roles (attacker, user, admin) with various permissions as shown in the diagram below
