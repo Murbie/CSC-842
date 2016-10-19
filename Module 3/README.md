@@ -26,7 +26,7 @@ If a signature match is found, the script will output a message stating which fi
 ##Script Usage & Functionality Walkthrough
 Execute the scanner perl script with the specified signature file and directory to scan.
 
-./scanner.pl <directory> <signature file>
+./scanner.pl directory signatures
 
 If an invalid file or directory is provided, the script will error out appropriately.
 
