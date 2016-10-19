@@ -31,7 +31,7 @@ Execute the scanner perl script with the specified signature file and directory 
 If an invalid file or directory is provided, the script will error out appropriately.
 
 ##Resources
+Listed throughout the information above
 
-
-
-
+Perl Documentation
+http://perldoc.perl.org
