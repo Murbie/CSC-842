@@ -1,6 +1,6 @@
 #Module 3 - scanner.pl
 ##Idea
-Dive back into Perl and learn the basics of the language after seeing many examples of Perl scripts in other cycles! Create a basic virus scanner that can search and determine the presence of any signature matches in a given directory from a signature file.
+Dive back into Perl and learn the basics of the language after seeing many examples of Perl scripts in other cycles! My goal was to create a basic virus scanner that can search and determine the presence of any signature matches in a given directory from a signature file.
 
 ##Overview
 This Perl script is a basic virus scanner that recursively scans files in a given directory and all of its subdirectories to find signature matches.
