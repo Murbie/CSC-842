@@ -1,6 +1,6 @@
 #Module 3 - scanner.pl
 ##Idea
-Create a basic virus scanner that can search and determine the presence of any signature matches in a given directory from a signature file.
+Dive back into Perl and learn the basics of the language after seeing many examples of Perl scripts in other cycles! Create a basic virus scanner that can search and determine the presence of any signature matches in a given directory from a signature file.
 
 ##Overview
 This Perl script is a basic virus scanner that recursively scans files in a given directory and all of its subdirectories to find signature matches.
@@ -9,7 +9,7 @@ This scanner opens the signature file and scanned file in binary using the Find:
 
 http://search.cpan.org/~uri/File-Slurp-9999.19/lib/File/Slurp.pm
 
-Next, the scanner uses the Find::Find module, which has an index function that utilizes the Boyer-Moore Algorithm to find a substring match in .
+Next, the scanner uses the Find::Find module, which has an index function that utilizes the Boyer-Moore Algorithm to find a substring match in a file.
 
 http://search.cpan.org/~rjbs/perl-5.24.0/ext/File-Find/lib/File/Find.pm
 
@@ -31,7 +31,7 @@ Execute the scanner perl script with the specified signature file and directory 
 If an invalid file or directory is provided, the script will error out appropriately.
 
 ##Resources
-Listed throughout the information above
+Listed throughout the information above.
 
 Perl Documentation
 http://perldoc.perl.org
