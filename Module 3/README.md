@@ -13,7 +13,10 @@ Next, the scanner uses the Find::Find module, which has an index function that u
 
 http://search.cpan.org/~rjbs/perl-5.24.0/ext/File-Find/lib/File/Find.pm
 
-The Boyer-Moore algorithm is regarded as the most efficient string matching algorithm. https://en.wikipedia.org/wiki/Boyer–Moore\_string\_search\_algorithm
+The Boyer-Moore algorithm is regarded as the most efficient string matching algorithm. https://en.wikipedia.org/wiki/Boyer–Moore_string_search_algorithm
+
+
+
 
 If a signature match is found, the script will output a message stating which file matched which signature.
 
