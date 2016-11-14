@@ -10,13 +10,21 @@ I decided to go a little further as the WMI AntiVirusProduct has a lot more info
 Output consists of:
 
 ComputerName
+
 AV Product state (hex value)
+
 AV State (enabled/disabled)
+
 AV Updated? (up-to-date / out-of-date)
+
 AV Product name
+
 GUID
+
 AV Executable Path
+
 AV Reporting Executable Path
+
 Timestamp
 
 ##Files Overview:
