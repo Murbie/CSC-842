@@ -35,10 +35,6 @@ Execute the PowerShell Script without any arguments and the localhost machine wi
 
 ./scan.ps1
 
-Execute the PowerShell Script with the -ComputerName argument and all of the machines in the array will be scanned.
-
-./scan.ps1 -ComputerName PC1,PC2
-
 ##Resources
 Microsoft SecurityCenter2
 http://neophob.com/2010/03/wmi-query-windows-securitycenter2/
