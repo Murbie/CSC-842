@@ -1,4 +1,4 @@
-#Module 3 - scan.ps1
+#Module 4 - scan.ps1
 ##Idea
 Get some hands on with PowerShell and learn the basics of the language after seeing many examples of PowerShell scripts in other cycles! My objective for this cycle was derived from the spreadsheet that Josh provided, which is shown in the next section below.
 
@@ -47,6 +47,8 @@ StackOverflow
 http://stackoverflow.com/questions/33649043/powershell-how-to-get-antivirus-product-details
 
 ##Future Work
+Connect to other computers in the same domain with credentials to be able to extract anti-virus information from each machine.
+
 Be able to detect my own statuses based on the hex value of the product state in the WMI.  Ran into issues and could not figure out how to properly read the hex values.  Will implement this in the next cycle.
 
 https://social.msdn.microsoft.com/Forums/en-US/6501b87e-dda4-4838-93c3-244daa355d7c/wmisecuritycenter2-productstate?forum=vblanguage
