@@ -1,3 +1,7 @@
+# Author - Kyle Murbach
+# CSC-842-D30
+# tracer.py
+
 ################
 ### Includes ###
 ################

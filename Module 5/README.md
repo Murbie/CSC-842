@@ -32,5 +32,7 @@ http://staff.washington.edu/jon/python-course/python_traceroute.py
 
 ##Future Work
 Greppable output, text file format
+
 XML formmatted output
+
 Having more flags for other traceroute activities such as protocol type, etc. (only does TCP right now)
