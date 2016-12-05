@@ -15,7 +15,7 @@ python trace.py -i <IP ADDRESS>
 
 Execute the Python Script with the -t flag to trace a hostname.
 
-python trace.py -h <HOSTNAME>
+python trace.py -t <HOSTNAME>
 
 ##Resources
 Scapy in Python - overview / basics
@@ -36,3 +36,5 @@ Greppable output, text file format
 XML formmatted output
 
 Having more flags for other traceroute activities such as protocol type, etc. (only does TCP right now)
+
+IPv6 Support
